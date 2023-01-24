@@ -1,0 +1,67 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />   
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="expires" content="-1">
+<link rel="icon" type="image/x-icon" href="icon.ico" />
+<title>Internet hotspot - Log out</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="style.css">
+
+<script>
+    function openLogin() {
+	if (window.name != 'hotspot_logout') return true;
+	open('$(link-login)', '_blank', '');
+	window.close();
+	return false;
+    }
+</script>
+<style>
+.login{margin-bottom: auto;}
+body{margin-right: auto;}
+
+</style>
+</head>
+
+<body>
+
+    <section class='login' id='login'>
+        <center><p><img src="jopipay.png" alt="Avatar" class="avatar"></p>
+            <br>
+          <span class="fast-flicker" style="font-family: Arial black; font-size: 20px; font-weight: bold;">JOPIPAY WIFI&nbsp;</span><span class="flicker"  style="font-family: Arial black; font-size: 20px; font-weight: bold;">VOUCHER</span>
+        </center>
+          <div class="container">
+</div>
+    <div class="ie-fixMinHeight">
+        <div class="main">
+            <div class="wrap">
+                <h1>You have just logged out!</h1> 
+                <table>  
+                    <tr><td><p style="color: black;">Username</td><td><p style="color: black;">$(username)</td></p></tr>
+                    <tr><td><p style="color: black;">IP address</td><td><p style="color: black;">$(ip)</td></p></tr>
+                    <tr><td><p style="color: black;">MAC address</td><td><p style="color: black;">$(mac)</td></p></tr>
+                    <tr><td><p style="color: black;">Session time</td><td><p style="color: black;">$(uptime)</td></p></tr><p style="color: black;">
+                    $(if session-time-left)
+                    <tr><td><p style="color: black;">Time left</td><td><p style="color: black;">$(session-time-left)</td></p></tr>
+                    $(endif)
+                    <tr><td><p style="color: black;">Bytes up / down:</td><td><p style="color: black;">$(bytes-in-nice) / $(bytes-out-nice)</td></p></tr>
+                </table>
+                <form action="$(link-login)" name="login" onSubmit="return openLogin()">
+                <input type="submit" value="Log in">
+                </form>
+                
+            </div>
+            
+        </div>
+        
+    </div>
+ 
+</section>
+
+</body>
+
+ <!--  <div class="sign">
+      <span class="fast-flicker">JOPIPAY&nbsp;</span>WIFI&nbsp;<span class="flicker">VOU</span>CHER
+    </div> -->
+</html>
